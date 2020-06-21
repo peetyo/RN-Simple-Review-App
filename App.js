@@ -3,6 +3,7 @@ import { StyleSheet, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard }
 import Header from './components/Header'
 import TodoItem from './components/TodoItem'
 import AddTodo from './components/AddTodo'
+import Sandbox from './components/Sandbox'
 
 export default function App() {
 
@@ -31,24 +32,25 @@ export default function App() {
   }
 
   return (
-    <TouchableWithoutFeedback onPress={()=>{
-      Keyboard.dismiss();
-    }}>
-      <View style={styles.container}>
-        <Header />
-        <View style={styles.content}>
-          <AddTodo submitHandler={submitHandler}/>
-          <View style={styles.list}>
-            <FlatList
-              data={todos}
-              renderItem={({item})=> (
-                <TodoItem item={item} pressHandler={pressHandler}/>
-                )}
-                />
-          </View>
-        </View>
-      </View>
-    </TouchableWithoutFeedback>
+    <Sandbox />
+    // <TouchableWithoutFeedback onPress={()=>{
+    //   Keyboard.dismiss();
+    // }}>
+    //   <View style={styles.container}>
+    //     <Header />
+    //     <View style={styles.content}>
+    //       <AddTodo submitHandler={submitHandler}/>
+    //       <View style={styles.list}>
+    //         <FlatList
+    //           data={todos}
+    //           renderItem={({item})=> (
+    //             <TodoItem item={item} pressHandler={pressHandler}/>
+    //             )}
+    //             />
+    //       </View>
+    //     </View>
+    //   </View>
+    // </TouchableWithoutFeedback>
   );
 }
 
