@@ -1,7 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../screens/Home'
+import Home from '../screens/Home';
 import ReviewDetails from '../screens/ReviewDetails';
+import Header from '../shared/header';
 
 const Stack = createStackNavigator()
 
@@ -11,11 +12,13 @@ export default function Navigator() {
     headerStyle: { backgroundColor: '#eee', height: 80},
     headerTintColor: '#444'
   }
-
-  const homeOptions = {
-    // headerStyle: { backgroundColor: 'pink'}
-  }
   
+  const homeOptions = ({ navigation }) => 
+  {
+    return {
+      headerTitle: ()=> <Header navigation={navigation} title='GameZone'/>,
+    }
+  }
   const reviewDetailsOptions = {
     // headerStyle: { backgroundColor: 'pink'}
   }
